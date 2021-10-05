@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:resources="clr-namespace:rdvperso.Resx"   
+             BackgroundColor="{StaticResource AcrylicFrameBackgroundColor}"
+             Title="{x:Static resources:AppResources.MenuInformations}"
+             x:Class="rdvperso.Views.LegalPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout.Padding>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <OnPlatform.Platforms>
+                        <On Platform="Android" Value="20,60,20,60" />
+                        <On Platform="iOS" Value="20,40,20,60" />
+                    </OnPlatform.Platforms>
+                </OnPlatform>
+            </StackLayout.Padding>
+            <StackLayout >
+                <Label   VerticalOptions="Center" HorizontalOptions="Center" Style="{StaticResource TextSubtitleSecondary}" >
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Made by " />
+                            <Span Text="HappyApp"
+                  TextColor="Blue"
+                  TextDecorations="Underline">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding TapCommand}"
+                                          CommandParameter="https://aitek.tech" />
+                                </Span.GestureRecognizers>
+                            </Span>
+                            <Span Text="." />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="40">
+
+                   
+                    <Label  Style="{StaticResource TextSubtitleSecondary}" Text="Version: 1.0"></Label>
+
+                </StackLayout>
+
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

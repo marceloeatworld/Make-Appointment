@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms" 
+             xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"            
+             BackgroundColor="{StaticResource AcrylicFrameBackgroundColor}"
+             xmlns:resources="clr-namespace:rdvperso.Resx"              
+             Title="{x:Static resources:AppResources.MenuMesrendezvous}"
+             x:Class="rdvperso.Views.RdvPage">
+    <ContentPage.Resources>
+        <ResourceDictionary />
+    </ContentPage.Resources>
+
+    <StackLayout Spacing="10">
+        <StackLayout.Padding>
+            <OnPlatform x:TypeArguments="Thickness">
+                <OnPlatform.Platforms>
+                    <On Platform="Android" Value="20,5,20,5" />
+                    <On Platform="iOS" Value="20,5,20,5" />
+                </OnPlatform.Platforms>
+            </OnPlatform>
+        </StackLayout.Padding>
+
+        <ListView x:Name="GetRdvCollection"                
+                  HasUnevenRows="True"  
+                  RefreshControlColor="{StaticResource AccentColor}"
+                  IsPullToRefreshEnabled="True"
+                  SeparatorVisibility="None" 
+                  Grid.Row="1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell >
+                        <ViewCell.ContextActions>
+                            <MenuItem Clicked="BtnDelete_Clicked"
+                                      
+                                      CommandParameter="{Binding .}"                                                                                  
+                                      Text="{x:Static resources:AppResources.SupprimerJson}" 
+                                      IsDestructive="True" />
+                        </ViewCell.ContextActions>
+                        <ViewCell.View>
+                            <Frame  Margin="10" HasShadow="True" CornerRadius="20" BackgroundColor="White"  Visual="Acrylic">
+                                <StackLayout Orientation="Horizontal" >
+                                    <ffimageloadingsvg:SvgCachedImage
+                                                                DownsampleToViewSize="True"
+                                                                FadeAnimationEnabled="True"
+                                                                Source="{Binding service.FullImageUrl}"
+                                                                Aspect="AspectFit"
+                                                                HorizontalOptions="Center" 
+                                                                VerticalOptions="Center"                                                              
+                                                                HeightRequest="150"
+                                                                WidthRequest="150"
+                                                                InputTransparent="True" />
+
+                                    <StackLayout>
+
+                                        <Label Text="{Binding start}"
+                                                               Margin="1,0,1,0"
+                                                               FontAttributes="Bold"
+                                                               FontSize="Large"
+                                                               HorizontalOptions="FillAndExpand"
+                                                               VerticalOptions="FillAndExpand" />
+                                        <Label Text="{Binding provider.firstName}"
+                                                               FontAttributes="Italic"
+                                                               HorizontalOptions="Start"
+                                                               Margin="1,0,1,0"
+                                                                />
+                                        <Label Text="{Binding provider.lastName}"
+                                                               FontAttributes="Italic"
+                                                               HorizontalOptions="Start"
+                                                               Margin="1,0,1,0"
+                                                               />
+                                        <Label Text="{Binding provider.address}"
+                                                               FontAttributes="Italic"
+                                                               Margin="1,0,1,0"
+                                                               HorizontalOptions="FillAndExpand"
+                                                               MaxLines="2"
+                                                               LineBreakMode="TailTruncation" />
+                                        <Label Text="{Binding provider.city}"
+                                                               FontAttributes="Italic"
+                                                               HorizontalOptions="FillAndExpand"
+                                                               Margin="1,0,1,0"
+                                                               LineBreakMode="TailTruncation" />
+                                        <Label Text="{Binding provider.zip}"
+                                                               FontAttributes="Italic"
+                                                               HorizontalOptions="FillAndExpand"
+                                                               Margin="1,0,1,0"
+                                                               LineBreakMode="TailTruncation" />
+                                        <Label Text="{Binding service.name}"
+                                                               Margin="1,0,1,0"
+                                                               HorizontalOptions="FillAndExpand" />
+
+                                        <Label FontAttributes="Bold"                                                            
+                                                   HorizontalOptions="FillAndExpand"
+                                                   Margin="1,0,1,0"
+                                                   LineBreakMode="TailTruncation">
+                                            <Label.Text>
+                                                <MultiBinding StringFormat="{}{0} {1}">
+                                                    <Binding Path="service.price" />
+                                                    <Binding Path="service.currency" />
+                                                </MultiBinding>
+                                            </Label.Text>
+                                        </Label>
+
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

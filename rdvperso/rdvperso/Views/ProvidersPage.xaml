@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms" xmlns:rv="clr-namespace:Sharpnado.MaterialFrame;assembly=Sharpnado.MaterialFrame"
+             xmlns:resources="clr-namespace:rdvperso.Resx" xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
+             Title="{x:Static resources:AppResources.MenuAcceuil}"
+             x:Class="rdvperso.Views.ProvidersPage">
+    <ContentPage.Resources>
+        <ResourceDictionary/>
+    </ContentPage.Resources>
+
+    <StackLayout Spacing="5">
+        <StackLayout.Padding>
+            <OnPlatform x:TypeArguments="Thickness">
+                <OnPlatform.Platforms>
+                    <On Platform="Android" Value="20,30,20,30" />
+                    <On Platform="iOS" Value="20,20,20,30" />
+                </OnPlatform.Platforms>
+            </OnPlatform>
+        </StackLayout.Padding>
+        <StackLayout Padding="10,10">
+            <Label x:Name="textNomP"
+                   HorizontalOptions="Start"          
+                   Style="{StaticResource TextHuge}"/>
+            <Label 
+                 HorizontalOptions="Start"
+                   Text="{x:Static resources:AppResources.HomeTitre}" 
+                   Style="{StaticResource TextTitle}"/>
+        </StackLayout>
+
+        <CollectionView
+                            HorizontalOptions="CenterAndExpand"
+                            x:Name="CvProviders"               
+                            RemainingItemsThreshold="0"
+                            VerticalScrollBarVisibility="Always"             
+                            SelectionChanged="CvProviders_SelectionChanged"
+                            SelectionMode="Single"
+                            MinimumHeightRequest="50">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid   RowSpacing="20"
+                                    ColumnSpacing="60" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100"  />
+                            <RowDefinition Height="10"  />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="CommonStates">
+                                <VisualState Name="Normal" />
+                                <VisualState Name="Selected">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="{StaticResource AcrylicFrameBackgroundColor}" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+
+                        <ffimageloadingsvg:SvgCachedImage
+                                                                DownsampleToViewSize="True"
+                                                                FadeAnimationEnabled="True"
+                                                                Source="{Binding FullImageUrl}"
+                                                                Aspect="AspectFit"
+                                                                HorizontalOptions="Start" 
+                                                                VerticalOptions="Start"                                                              
+                                                                HeightRequest="130"
+                                                                WidthRequest="130"
+                                                                InputTransparent="True" />
+                        <StackLayout>
+
+                            <Label Text="{Binding firstName}"
+                                           FontAttributes="Italic"
+                                           HorizontalOptions="Start"
+                                           Margin="150,0,0,0"/>
+                            <Label Text="{Binding lastName}"
+                                           FontAttributes="Italic"
+                                           HorizontalOptions="Start"
+                                           Margin="150,0,0,0"/>
+                            <Label Text="{Binding address}"
+                                           FontAttributes="Italic"
+                                           Margin="150,0,0,0"
+                                           HorizontalOptions="FillAndExpand"
+                                           MaxLines="2"
+                                           LineBreakMode="TailTruncation" />
+                            <Label Text="{Binding city}"
+                                           FontAttributes="Italic"
+                                           HorizontalOptions="FillAndExpand"
+                                           Margin="150,0,0,0"
+                                           LineBreakMode="TailTruncation" />
+                            <Label Text="{Binding zip}"
+                                           FontAttributes="Italic"
+                                           HorizontalOptions="FillAndExpand"
+                                           Margin="150,0,0,0"
+                                           LineBreakMode="TailTruncation" />
+
+                        </StackLayout>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+
+
+    </StackLayout>
+
+</ContentPage>

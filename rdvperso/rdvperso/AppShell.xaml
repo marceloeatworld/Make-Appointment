@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:rdvperso.Views"
+       xmlns:resources="clr-namespace:rdvperso.Resx"   
+        xmlns:local="using:rdvperso"
+       x:Class="rdvperso.AppShell">
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource AccentColor}" />
+                <Setter Property="Shell.ForegroundColor" Value="White" />
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource AccentColor}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <TabBar>
+        <ShellContent Title="{x:Static resources:AppResources.MenuAcceuil}" Icon="{StaticResource IconHome}" Route="ProvidersPage" ContentTemplate="{DataTemplate views:ProvidersPage}" />
+        <ShellContent Title="{x:Static resources:AppResources.MenuMonCompte}" Icon="{StaticResource IconUser}" ContentTemplate="{DataTemplate views:ComptePage}" />
+        <ShellContent Title="{x:Static resources:AppResources.MenuMesrendezvous}" Icon="{StaticResource IconRdv}" ContentTemplate="{DataTemplate views:RdvPage}" />
+        <ShellContent Title="{x:Static resources:AppResources.MenuAppeleznous}" Icon="{StaticResource IconCall}" ContentTemplate="{DataTemplate views:ContactPage}" />
+        <ShellContent Title="{x:Static resources:AppResources.MenuAnotresujet}" Icon="{StaticResource IconAbout}" ContentTemplate="{DataTemplate views:InfosPage}" />
+        <ShellContent Title="{x:Static resources:AppResources.MenuInformations}" Icon="{StaticResource IconInfo}" ContentTemplate="{DataTemplate views:LegalPage}" />
+    </TabBar>
+
+    <!--
+        If you would like to navigate to this content you can do so by calling
+        await Shell.Current.GoToAsync("//LoginPage");
+    -->
+    <!--<TabBar>
+        <ShellContent Route="ProvidersPage" ContentTemplate="{DataTemplate views:ProvidersPage}" />
+        <ShellContent Route="HomePage" ContentTemplate="{DataTemplate views:HomePage}" />
+        <ShellContent Route="PrestaPage" ContentTemplate="{DataTemplate views:PrestaPage}" />
+        <ShellContent Route="RegisterPage" ContentTemplate="{DataTemplate views:RegisterPage}" />
+        <ShellContent Route="AvailabilitiesPage" ContentTemplate="{DataTemplate views:AvailabilitiesPage}" />
+        <ShellContent Route="AppointmentsPage" ContentTemplate="{DataTemplate views:AppointmentsPage}" />
+        
+    </TabBar>-->
+
+</Shell>

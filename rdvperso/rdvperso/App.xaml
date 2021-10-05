@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="rdvperso.App">
+<Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/Colors.xaml" />
+                <ResourceDictionary Source="/Styles/Global.xaml" />
+                <ResourceDictionary Source="/Styles/Sizes.xaml" />
+                <ResourceDictionary Source="/Styles/Text.xaml" />
+                <ResourceDictionary Source="/Styles/Labels.xaml" />
+                <ResourceDictionary Source="/Styles/Icons.xaml" />
+                <ResourceDictionary Source="/Styles/Buttons.xaml" />
+                <ResourceDictionary Source="/Styles/MaterialFrame.xaml" />
+                <ResourceDictionary Source="/Styles/Image.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <OnPlatform x:Key="ToolbarHeight" x:TypeArguments="GridLength">
+                <On Platform="iOS">140</On>
+                <On Platform="Android">120</On>
+            </OnPlatform>
+            
+            <Thickness x:Key="StatusBarHeightPadding"
+                       Bottom="0"
+                       Left="0"
+                       Right="0">
+                <Thickness.Top>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="iOS">20</On>
+                        <On Platform="Android">0</On>
+                    </OnPlatform>
+                </Thickness.Top>
+                
+            </Thickness>
+            <GridLength x:Key="HeaderHeight">40</GridLength>
+            
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<popup:PopupPage  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+                  xmlns:resources="clr-namespace:rdvperso.Resx" xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
+                  x:Class="rdvperso.Views.AddPopupPage"
+                  
+                 >
+
+    <StackLayout   VerticalOptions="Center" 
+        HorizontalOptions="Center" 
+        Padding="20, 20, 20, 20">
+        <Frame HasShadow="True" CornerRadius="20" BackgroundColor="#F0F0F3" HeightRequest="380" WidthRequest="250"  Visual="Material">
+            <StackLayout>
+                <Entry  
+                               Placeholder="{x:Static resources:AppResources.HolderNom}"
+                           ClearButtonVisibility="WhileEditing"
+                           IsTextPredictionEnabled="True" 
+                            IsSpellCheckEnabled="True"
+                          
+                               Style="{StaticResource TextTitle}"
+                               x:Name="EntlastName"
+                               Keyboard="Text" />
+                <Entry 
+                               Placeholder="{x:Static resources:AppResources.HolderPrenom}"
+                           ClearButtonVisibility="WhileEditing"
+                           IsTextPredictionEnabled="True" 
+                            IsSpellCheckEnabled="True"
+                          
+                               Style="{StaticResource TextTitle}"
+                               x:Name="EntfirstName"
+                               Keyboard="Text"/>
+                <Entry
+                               Placeholder="{x:Static resources:AppResources.HolderEmail}"
+                           ClearButtonVisibility="WhileEditing"
+                           IsTextPredictionEnabled="True" 
+                            IsSpellCheckEnabled="True"
+                        
+                               Style="{StaticResource TextTitle}"
+                               x:Name="Entemail"
+                               Keyboard="Text" />
+                <Entry 
+                                Placeholder="{x:Static resources:AppResources.HolderNumero}"
+                           ClearButtonVisibility="WhileEditing"
+                           IsTextPredictionEnabled="True" 
+                            IsSpellCheckEnabled="True"
+                        MaxLength="10"
+                               Style="{StaticResource TextTitle}"
+                               x:Name="Entphone"
+                               Keyboard="Text" />
+                <Entry 
+                                Placeholder="{x:Static resources:AppResources.HolderAddresse}"
+                           ClearButtonVisibility="WhileEditing"
+                           IsTextPredictionEnabled="True" 
+                            IsSpellCheckEnabled="True"
+                       
+                               Style="{StaticResource TextTitle}"
+                               x:Name="Entaddress"
+                               Keyboard="Text" />
+                <Entry 
+                                Placeholder="{x:Static resources:AppResources.HolderVille}"
+                           ClearButtonVisibility="WhileEditing"
+                           IsTextPredictionEnabled="True" 
+                            IsSpellCheckEnabled="True"
+                       
+                               Style="{StaticResource TextTitle}"
+                               x:Name="Entcity"
+                               Keyboard="Text" />
+                <Entry
+                                Placeholder="{x:Static resources:AppResources.HolderCP}"
+                           ClearButtonVisibility="WhileEditing"
+                           IsTextPredictionEnabled="True" 
+                            IsSpellCheckEnabled="True"
+                       MaxLength="5"
+                               Style="{StaticResource TextTitle}"
+                               x:Name="Entzip"
+                               Keyboard="Text" />
+
+                <StackLayout VerticalOptions="Center"  Padding="20, 20, 20, 20">
+                    <sh:Shadows Grid.Row="1"
+            Grid.Column="0"
+            CornerRadius="40"
+            Shades="{sh:NeumorphismShades}">
+                        <ImageButton WidthRequest="60"
+                 HeightRequest="60"
+                 Padding="10"
+               Clicked="BtnValider_Clicked"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                 BackgroundColor="#F0F0F3"
+                 CornerRadius="30"
+                 Source="{StaticResource IconValide}" />
+                    </sh:Shadows>
+
+                </StackLayout>
+
+            </StackLayout>
+
+
+
+        </Frame>
+
+    </StackLayout>
+
+</popup:PopupPage>

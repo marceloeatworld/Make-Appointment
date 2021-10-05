@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:rdvperso.Resx" 
+             BackgroundColor="{StaticResource AcrylicFrameBackgroundColor}"
+             Title="{x:Static resources:AppResources.MenuAnotresujet}"
+             x:Class="rdvperso.Views.InfosPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout.Padding>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <OnPlatform.Platforms>
+                        <On Platform="Android" Value="20,60,20,60" />
+                        <On Platform="iOS" Value="20,40,20,60" />
+                    </OnPlatform.Platforms>
+                </OnPlatform>
+            </StackLayout.Padding>
+            <Grid ColumnDefinitions="*,100,*" 
+          RowDefinitions="*,100,40,*">
+                <Ellipse
+        Grid.Row="1"
+        Grid.Column="1"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        WidthRequest="170"
+        HeightRequest="170"
+        Stroke="#557ED2"
+        StrokeThickness="4"
+        Fill="White"/>
+            <Image
+        Grid.Row="1"
+        Grid.Column="1"
+        
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        WidthRequest="150"
+        HeightRequest="150"        
+        Source="logo.png">
+                <Image.Clip>
+                    <EllipseGeometry
+                Center="72,72"
+                RadiusX="75"
+                RadiusY="75"/>
+                </Image.Clip>
+            </Image>
+            </Grid>
+            <Label Text="Nous sommes SmartphonesUnivers et nous croyons fermement que tous produits électroniques a plusieurs vies. C'est pourquoi nous œuvrons à développer la seconde vie de vos téléphones et produits électroniques.
+
+Nos services, de la réparation de smartphones à la vente de produits reconditionnés, ont pour vocation de développer l'économie circulaire, afin que votre téléphone ne soit plus qu'un simple produit de consommation."
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

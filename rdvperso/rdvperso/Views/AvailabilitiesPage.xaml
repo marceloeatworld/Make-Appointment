@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="rdvperso.Views.AvailabilitiesPage"
+              Title="{x:Static resources:AppResources.AvailabilitiesTitre}"
+             BackgroundColor="{StaticResource AcrylicFrameBackgroundColor}"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:rv="clr-namespace:Sharpnado.MaterialFrame;assembly=Sharpnado.MaterialFrame"
+             xmlns:resources="clr-namespace:rdvperso.Resx" xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows">
+    <ContentPage.Resources>
+        <ResourceDictionary />
+    </ContentPage.Resources>
+
+    <StackLayout Spacing="5">
+        <StackLayout.Padding>
+            <OnPlatform x:TypeArguments="Thickness">
+                <OnPlatform.Platforms>
+                    <On Platform="Android" Value="20,30,20,30" />
+                    <On Platform="iOS" Value="20,20,20,30" />
+                </OnPlatform.Platforms>
+            </OnPlatform>
+        </StackLayout.Padding>
+
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+
+            <DatePicker MinimumDate="{x:Static sys:DateTime.Now}"                                                                      
+                        Style="{StaticResource TextHeadline}"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"                               
+                        DateSelected="DatePicker_OnSelectedIndexChanged"
+                        Format="         dddd dd yyyy         ">
+            </DatePicker>
+        </StackLayout>
+
+
+        <CollectionView              
+                            Margin="0,0,0,0"  
+                            x:Name="CvAvailabilities"
+                            Grid.Row="0"
+                            HeightRequest="450"                
+                            VerticalScrollBarVisibility="Always"             
+                            SelectionChanged="CvAvailabilities_SelectionChanged"
+                            SelectionMode="Single">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="1" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="5">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="CommonStates">
+                                <VisualState Name="Normal" />
+                                <VisualState Name="Selected">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="{StaticResource AcrylicFrameBackgroundColor}" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <pancake:PancakeView   BackgroundColor="#557ED2" HeightRequest="37"  WidthRequest="170" Opacity="0.9" 
+                                        CornerRadius="18" VerticalOptions="Center" 
+                                        HorizontalOptions="Center">
+                            <pancake:PancakeView.Shadow>
+                                <pancake:DropShadow Color="#000000" Offset="10,10" BlurRadius="5"/>
+                            </pancake:PancakeView.Shadow>
+                            <Label
+                              Style="{StaticResource TextHeadline}"
+                                            TextColor="White"
+                              VerticalTextAlignment="Center"
+                                            HorizontalTextAlignment="Center"                                   
+                                            Text="{Binding .}" >
+                            </Label>
+
+                        </pancake:PancakeView>
+
+
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+
+    </StackLayout>
+
+</ContentPage>  
+    

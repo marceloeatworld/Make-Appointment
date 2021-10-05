@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Annuler" xml:space="preserve">
+    <value>Annuler</value>
+    <comment>RdvPage</comment>
+  </data>
+  <data name="Appeleznous" xml:space="preserve">
+    <value>Appuyez pour nous appeler</value>
+    <comment>ContactPage</comment>
+  </data>
+  <data name="AppointmentsPage" xml:space="preserve">
+    <value>Confirmer votre rendez-vous</value>
+    <comment>AppointmentsPage</comment>
+  </data>
+  <data name="AppRemarque" xml:space="preserve">
+    <value>Avez-vous une remarque concernant votre probleme ?</value>
+    <comment>AppointmentsPage</comment>
+  </data>
+  <data name="AvailabilitiesTitre" xml:space="preserve">
+    <value>Choisissez la date et l'heure de votre rendez-vous</value>
+    <comment>AvailabilitiesPage</comment>
+  </data>
+  <data name="Chargement" xml:space="preserve">
+    <value>Chargement</value>
+    <comment>Chargment</comment>
+  </data>
+  <data name="ConnectionError" xml:space="preserve">
+    <value>Vous devez être connecté au réseau</value>
+    <comment>ConnectionError</comment>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Pour toute information veuillez nous contacter</value>
+    <comment>ContactPage</comment>
+  </data>
+  <data name="DeleteCompte" xml:space="preserve">
+    <value>Le compte a été supprimé</value>
+    <comment>Efffacer le compte</comment>
+  </data>
+  <data name="Desoler" xml:space="preserve">
+    <value>Desolé</value>
+    <comment>DesolerError</comment>
+  </data>
+  <data name="DevicesTitre" xml:space="preserve">
+    <value>Choisissez votre modèle</value>
+    <comment>DevicesPage</comment>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Une erreur s'est produite</value>
+    <comment>Erreur</comment>
+  </data>
+  <data name="ErrorCompte" xml:space="preserve">
+    <value>Vous n'avez pas de compte</value>
+    <comment>PasCompte</comment>
+  </data>
+  <data name="ErrorHoraire" xml:space="preserve">
+    <value>Il n'y a pas d'heures de rendez-vous disponibles pour la date sélectionnée. Choisissez une autre date s'il vous plaît.</value>
+    <comment>PasHoraire</comment>
+  </data>
+  <data name="ErrorRdv" xml:space="preserve">
+    <value>Vous n'avez pas de rendez-vous</value>
+    <comment>Pad de RDV</comment>
+  </data>
+  <data name="Hello" xml:space="preserve">
+    <value>Bonjour </value>
+    <comment>HomePage</comment>
+  </data>
+  <data name="HolderAddresse" xml:space="preserve">
+    <value>Addresse</value>
+    <comment>RegisterPage</comment>
+  </data>
+  <data name="HolderCP" xml:space="preserve">
+    <value>Code Postal</value>
+    <comment>RegisterPage</comment>
+  </data>
+  <data name="HolderEmail" xml:space="preserve">
+    <value>Email</value>
+    <comment>RegisterPage</comment>
+  </data>
+  <data name="HolderNom" xml:space="preserve">
+    <value>Nom</value>
+    <comment>RegisterPage</comment>
+  </data>
+  <data name="HolderNumero" xml:space="preserve">
+    <value>Numéro de téléphone</value>
+    <comment>RegisterPage</comment>
+  </data>
+  <data name="HolderPrenom" xml:space="preserve">
+    <value>Prénom</value>
+    <comment>RegisterPage</comment>
+  </data>
+  <data name="HolderVille" xml:space="preserve">
+    <value>Ville</value>
+    <comment>RegisterPage</comment>
+  </data>
+  <data name="HomeTitre" xml:space="preserve">
+    <value>Choisissez la marque</value>
+    <comment>HomePage</comment>
+  </data>
+  <data name="MenuAcceuil" xml:space="preserve">
+    <value>Acceuil</value>
+    <comment>MENU</comment>
+  </data>
+  <data name="MenuAnotresujet" xml:space="preserve">
+    <value>A notre sujet</value>
+    <comment>MENU</comment>
+  </data>
+  <data name="MenuAppeleznous" xml:space="preserve">
+    <value>Appelez-nous</value>
+    <comment>MENU</comment>
+  </data>
+  <data name="MenuInformations" xml:space="preserve">
+    <value>Informations</value>
+    <comment>MENU</comment>
+  </data>
+  <data name="MenuMesrendezvous" xml:space="preserve">
+    <value>Mes rendez-vous</value>
+    <comment>MENU</comment>
+  </data>
+  <data name="MenuMonCompte" xml:space="preserve">
+    <value>Mon Compte</value>
+    <comment>MENU</comment>
+  </data>
+  <data name="Merci" xml:space="preserve">
+    <value>Merci</value>
+    <comment>Merci</comment>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+    <comment>OKError</comment>
+  </data>
+  <data name="PasModele" xml:space="preserve">
+    <value>Ce modèle n'est pas listé, contactez-nous</value>
+    <comment>Pas le modele</comment>
+  </data>
+  <data name="PrestaTitre" xml:space="preserve">
+    <value>Choisissez la réparation</value>
+    <comment>PrestaPage</comment>
+  </data>
+  <data name="RdvAnnuler" xml:space="preserve">
+    <value>Le rendez-vous a été annulé</value>
+    <comment>RDV ANULER</comment>
+  </data>
+  <data name="SupprimerJson" xml:space="preserve">
+    <value>Supprimer</value>
+    <comment>ComptePage</comment>
+  </data>
+  <data name="ValiderJson" xml:space="preserve">
+    <value>Appuyez ici pour valider</value>
+    <comment>AppointmentsPage</comment>
+  </data>
+  <data name="VosInfos" xml:space="preserve">
+    <value>Remplissez vos informations</value>
+    <comment>RegisterPage</comment>
+  </data>
+</root>

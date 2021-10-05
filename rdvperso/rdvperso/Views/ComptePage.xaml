@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             xmlns:resources="clr-namespace:rdvperso.Resx"   
+             Title="{x:Static resources:AppResources.MenuMonCompte}"
+             BackgroundColor="{StaticResource AcrylicFrameBackgroundColor}"
+             x:Class="rdvperso.Views.ComptePage">
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Text="{x:Static resources:AppResources.Changer}" Clicked="BtnChange_Clicked" />
+        <ToolbarItem Text="{x:Static resources:AppResources.Ajouter}" Clicked="BtnAdd_Clicked" />
+    </ContentPage.ToolbarItems>-->
+    <ContentPage.Resources>
+        <ResourceDictionary />
+    </ContentPage.Resources>
+
+    <StackLayout Spacing="10">
+        <StackLayout.Padding>
+            <OnPlatform x:TypeArguments="Thickness">
+                <OnPlatform.Platforms>
+                    <On Platform="Android" Value="20,5,20,5" />
+                    <On Platform="iOS" Value="20,5,20,5" />
+                </OnPlatform.Platforms>
+            </OnPlatform>
+        </StackLayout.Padding>
+
+        <ListView x:Name="GetinfosCollection"                
+                     HasUnevenRows="True"                       
+                     RefreshControlColor="{StaticResource AccentColor}"                     
+                     IsPullToRefreshEnabled="True"
+                     SeparatorVisibility="None" 
+                     Grid.Row="1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+
+                    <ViewCell >
+
+                        <ViewCell.ContextActions>
+                            <MenuItem 
+                                Clicked="BtnEdit_Clicked"
+                                CommandParameter="{Binding .}"
+                                Text="{x:Static resources:AppResources.ModifierJson}" />
+                            <MenuItem 
+                                Clicked="BtnDelete_Clicked"
+                                CommandParameter="{Binding .}"                                                                                   
+                                Text="{x:Static resources:AppResources.SupprimerJson}" 
+                                IsDestructive="True" />
+                        </ViewCell.ContextActions>
+                        <Frame Margin="10" HasShadow="True" CornerRadius="20" BackgroundColor="White"  >
+
+                            <StackLayout>
+                                <Label 
+                                    Style="{StaticResource TextHeadline}"
+                                    HorizontalTextAlignment="Center"                                   
+                                    Text="{Binding id}" />
+                                <Label 
+                                    Style="{StaticResource TextHeadline}"
+                                    HorizontalTextAlignment="Center"                                   
+                                    Text="{Binding firstName}" />
+                                <Label 
+                                    Style="{StaticResource TextHeadline}"
+                                    HorizontalTextAlignment="Center"                                   
+                                    Text="{Binding lastName}" />
+                                <Label 
+                                    Style="{StaticResource TextHeadline}"
+                                    HorizontalTextAlignment="Center"                                   
+                                    Text="{Binding email}" />
+                                <Label 
+                                    Style="{StaticResource TextHeadline}"
+                                    HorizontalTextAlignment="Center"                                   
+                                    Text="{Binding phone}" />
+                                <Label 
+                                    Style="{StaticResource TextHeadline}"
+                                    HorizontalTextAlignment="Center"                                   
+                                    Text="{Binding address}" />
+                                <Label 
+                                    Style="{StaticResource TextHeadline}"
+                                    HorizontalTextAlignment="Center"                                   
+                                    Text="{Binding city}" />
+                                <Label 
+                                    Style="{StaticResource TextHeadline}"
+                                    HorizontalTextAlignment="Center"                                   
+                                    Text="{Binding zip}" />
+                            </StackLayout>
+                        </Frame>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

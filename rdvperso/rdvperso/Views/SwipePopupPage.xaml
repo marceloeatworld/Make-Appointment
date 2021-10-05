@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<popup:PopupPage  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+                  x:Class="rdvperso.Views.SwipePopupPage"
+                
+                 >
+
+    <StackLayout   VerticalOptions="Center" 
+        HorizontalOptions="Center" 
+        Padding="20, 20, 20, 20">
+        <Frame HasShadow="True" CornerRadius="20" BackgroundColor="#557ED2" HeightRequest="250" WidthRequest="250"  Visual="Material">
+            
+
+
+
+
+                <lottie:AnimationView 
+	                                    x:Name="animationView" 
+	                                    Animation="swipe.json" 
+	                                    Loop="True" 
+	                                    AutoPlay="True"           	                                   
+                                        WidthRequest="200"
+                                        HeightRequest="200"
+                                        BackgroundColor="#557ED2"
+	                                    VerticalOptions="Center" 
+	                                    HorizontalOptions="Center"/>
+            
+        </Frame>
+
+    </StackLayout>
+    
+</popup:PopupPage>

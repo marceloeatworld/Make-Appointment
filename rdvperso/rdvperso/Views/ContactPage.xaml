@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             xmlns:resources="clr-namespace:rdvperso.Resx" 
+             Title="{x:Static resources:AppResources.MenuAppeleznous}"
+             BackgroundColor="{StaticResource AcrylicFrameBackgroundColor}"
+             x:Class="rdvperso.Views.ContactPage">
+    <ContentPage.Content>
+
+        <StackLayout Margin="20,-150,20,10" HorizontalOptions="Center" VerticalOptions="Center">
+            <StackLayout.Padding>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <OnPlatform.Platforms>
+                        <On Platform="Android" Value="20,60,20,60" />
+                        <On Platform="iOS" Value="20,40,20,60" />
+                    </OnPlatform.Platforms>
+                </OnPlatform>
+            </StackLayout.Padding>
+            <StackLayout>
+                <Label Text="{x:Static resources:AppResources.Contact}"
+                         VerticalTextAlignment="Center"
+                         Style="{StaticResource TextHeadline}" 
+                         HorizontalTextAlignment="Center"/>
+
+            </StackLayout>
+            <lottie:AnimationView 
+	                                    x:Name="animationView" 
+	                                    Animation="phone-call.json" 
+	                                    Loop="True" 
+	                                    AutoPlay="True"           
+	                                    ClickedCommand="{Binding AnimationClickedCommand}"
+                                        WidthRequest="250"
+                                        HeightRequest="250"
+                                        BackgroundColor="Transparent"
+	                                    VerticalOptions="Center" 
+	                                    HorizontalOptions="Center"/>
+            <Button 
+                                Text="{x:Static resources:AppResources.Appeleznous}"                        
+                                FontAttributes="Italic"                          
+                                TextColor="#60000000"
+                                HorizontalOptions="Center"
+                                BackgroundColor="Transparent" 
+                                Clicked="BtnCall_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

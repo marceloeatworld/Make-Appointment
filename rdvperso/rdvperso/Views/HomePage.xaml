@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms" xmlns:rv="clr-namespace:Sharpnado.MaterialFrame;assembly=Sharpnado.MaterialFrame"
+             xmlns:resources="clr-namespace:rdvperso.Resx" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             Title="{x:Static resources:AppResources.HomeModel}"
+             BackgroundColor="{StaticResource AcrylicFrameBackgroundColor}"
+             x:Class="rdvperso.Views.HomePage">
+    <ContentPage.Resources>
+        <ResourceDictionary />
+    </ContentPage.Resources>
+
+
+    <StackLayout Spacing="5">
+        <StackLayout.Padding>
+            <OnPlatform x:TypeArguments="Thickness">
+                <OnPlatform.Platforms>
+                    <On Platform="Android" Value="20,30,20,30" />
+                    <On Platform="iOS" Value="20,20,20,30" />
+                </OnPlatform.Platforms>
+            </OnPlatform>
+        </StackLayout.Padding>
+
+
+
+        <SearchBar Placeholder="{x:Static resources:AppResources.LeModele}"
+                   CancelButtonColor="#557ED2"
+                   PlaceholderColor="#557ED2"
+                   TextColor="#557ED2"
+                   MaxLength="20" 
+                   x:Name="EntSearch"
+                   SearchButtonPressed="BtnSearch_Clicked"
+                   TextTransform="Lowercase"
+                   HorizontalTextAlignment="Center"
+                   FontSize="Medium"
+                   FontAttributes="Italic" />
+
+
+
+
+        <CollectionView 
+                                x:Name="CvCategories"               
+                                RemainingItemsThreshold="0"
+                                VerticalScrollBarVisibility="Always"            
+                                SelectionChanged="CvCategories_SelectionChanged"
+                                SelectionMode="Single"
+                                MinimumHeightRequest="100">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="2" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="70" />
+                            <RowDefinition Height="70" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="140" />
+                        </Grid.ColumnDefinitions>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="CommonStates">
+                                <VisualState Name="Normal" />
+                                <VisualState Name="Selected">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="{StaticResource AcrylicFrameBackgroundColor}" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <ffimageloadingsvg:SvgCachedImage                                                      
+                                                        Grid.RowSpan="2"                                                                                                 
+                                                        HeightRequest="150"
+                                                        WidthRequest="150"                                  
+                                                        InputTransparent="True" 
+                                                        FadeAnimationEnabled="True" 
+                                                        VerticalOptions="Center"
+                                                        HorizontalOptions="Center"
+                                                        Source="{Binding FullImageUrl}"/>
+                        <Label 
+                                                 Grid.Row="2"
+                                                 Grid.Column="0"
+                                                  Style="{StaticResource TextSubhead}"
+                                                 VerticalTextAlignment="Center"    
+                                                 HorizontalTextAlignment="Center"
+                                                 VerticalOptions="Center"
+                                                 HorizontalOptions="Center"
+                                                 Text="{Binding name}" />
+
+
+                    </Grid>
+
+                </DataTemplate>
+
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+
+
+
+
+
+    </StackLayout>
+
+
+</ContentPage>
