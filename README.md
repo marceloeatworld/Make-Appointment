@@ -7,7 +7,7 @@ https://play.google.com/store/apps/details?id=com.aitek.rdvperso
 ![alt text](https://raw.githubusercontent.com/marceloeatworld/Make-Appointment/master/home.png)
 
 #### Authors
- - Marcelo Pereira :trollface:
+ - Yannis Marcelo Pereira :trollface:
 
 #### License
  - Data may be used under the terms and conditions of the Open Licence.
