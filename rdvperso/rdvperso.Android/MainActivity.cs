@@ -32,7 +32,7 @@ namespace rdvperso.Droid
             Rg.Plugins.Popup.Popup.Init(this);
 
             //global::Xamarin.Forms.FormsMaterial.Init(this, savedInstanceState);
-            //lottie
+            //lotti
             AnimationViewRenderer.Init();
             UserDialogs.Init(this);
             CachedImageRenderer.Init(enableFastRenderer: true);
