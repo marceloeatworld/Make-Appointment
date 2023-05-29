@@ -2,7 +2,7 @@
 <popup:PopupPage  xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
-                  xmlns:resources="clr-namespace:rdvperso.Resx" xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
+                  xmlns:resources="clr-namespace:rdvperso.Resx"
                   x:Class="rdvperso.Views.AddPopupPage"
                   
                  >
@@ -77,10 +77,7 @@
                                Keyboard="Text" />
 
                 <StackLayout VerticalOptions="Center"  Padding="20, 20, 20, 20">
-                    <sh:Shadows Grid.Row="1"
-            Grid.Column="0"
-            CornerRadius="40"
-            Shades="{sh:NeumorphismShades}">
+
                         <ImageButton WidthRequest="60"
                  HeightRequest="60"
                  Padding="10"
@@ -90,8 +87,7 @@
                  BackgroundColor="#F0F0F3"
                  CornerRadius="30"
                  Source="{StaticResource IconValide}" />
-                    </sh:Shadows>
-
+                  
                 </StackLayout>
 
             </StackLayout>
